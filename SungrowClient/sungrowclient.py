@@ -4,7 +4,7 @@ from SungrowModbusTcpClient import SungrowModbusTcpClient
 from SungrowModbusWebClient import SungrowModbusWebClient
 from pymodbus.client.sync import ModbusTcpClient
 
-from SungrowClient.version import __version__
+from .version import __version__
 from datetime import datetime
 
 import logging
