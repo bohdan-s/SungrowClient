@@ -7,6 +7,7 @@ from pymodbus.client.sync import ModbusTcpClient
 from .version import __version__
 from datetime import datetime
 
+
 import logging
 import logging.handlers
 import time
