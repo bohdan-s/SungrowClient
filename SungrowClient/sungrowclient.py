@@ -11,10 +11,10 @@ import logging
 import logging.handlers
 import time
 
-class SungrowInverter():
+class SungrowClient():
     def __init__(self, config_inverter):
 
-        logging.info(f'Loading SungrowInverter {__version__}')
+        logging.info(f'Loading SungrowClient {__version__}')
 
         self.client_config = {
             "host":     config_inverter.get('host'),
