@@ -1,0 +1,3 @@
+pymodbus~=2.5.3
+SungrowModbusTcpClient>=0.1.5
+SungrowModbusWebClient>=0.3.2
