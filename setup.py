@@ -1,19 +1,19 @@
 import setuptools
 
-exec(open('SungrowInverter/version.py').read())
+exec(open('SungrowClient/version.py').read())
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="SungrowInverter",
+    name="SungrowClient",
     version=__version__,
     author="Bohdan Flower",
     author_email="github@bohdan.net",
     description="A wrapper for talking to Sungrow Inverters via Modbus and HTTP API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/bohdan-s/SungrowInverter",
+    url="https://github.com/bohdan-s/SungrowClient",
     packages=setuptools.find_packages(),
     install_requires=[
         'pymodbus~=2.5.3',
