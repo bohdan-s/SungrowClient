@@ -7,7 +7,6 @@ from pymodbus.client.sync import ModbusTcpClient
 from .version import __version__
 from datetime import datetime
 
-
 import logging
 import logging.handlers
 import time
@@ -440,7 +439,7 @@ class SungrowClient():
         # to help with graphing.
         try:
             if self.latest_scrape.get('start_stop'):
-                logging.info(f"DEBUG: start_stop:{self.latest_scrape.get('start_stop', 'null')} work_state_1:{self.latest_scrape.get('work_state_1', 'null')}")    
+                logging.debug(f"start_stop:{self.latest_scrape.get('start_stop', 'null')} work_state_1:{self.latest_scrape.get('work_state_1', 'null')}")    
                 if self.latest_scrape.get('start_stop', False) == 'Start' and self.latest_scrape.get('work_state_1', False).contains('Run'):
                     self.latest_scrape["run_state"] = "ON"
                 else:
