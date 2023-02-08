@@ -270,7 +270,7 @@ class SungrowClient():
                     if register.get('datarange'):
                         match = False
                         for value in register.get('datarange'):
-                            if value['response'] == rr.registers[num]:
+                            if value['response'] == rr.registers[num] or value['response'] == register_value:
                                 register_value = value['value']
                                 match = True
                         if not match:
