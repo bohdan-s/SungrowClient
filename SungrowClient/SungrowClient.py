@@ -315,10 +315,10 @@ class SungrowClient():
     def getRegisterType(self, check_register):
         for register in self.registers:
             if check_register == register['name']:
-                return register.get('type','gauge')
+                return register.get('metric_type','gauge')
         for register in self.registers_custom:
             if check_register == register['name']:
-                return register.get('type','gauge')
+                return register.get('metric_type','gauge')
         return 'gauge'
 
     def getRegisterDescription(self, check_register):
