@@ -312,6 +312,24 @@ class SungrowClient():
                 return register.get('unit','')
         return ''
 
+    def getRegisterType(self, check_register):
+        for register in self.registers:
+            if check_register == register['name']:
+                return register.get('metric_type','gauge')
+        for register in self.registers_custom:
+            if check_register == register['name']:
+                return register.get('metric_type','gauge')
+        return 'gauge'
+
+    def getRegisterDescription(self, check_register):
+        for register in self.registers:
+            if check_register == register['name']:
+                return register.get('description','')
+        for register in self.registers_custom:
+            if check_register == register['name']:
+                return register.get('description','')
+        return ''
+
     def validateLatestScrape(self, check_register):
         for register, value in self.latest_scrape.items():
             if check_register == register:
