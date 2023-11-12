@@ -376,12 +376,9 @@ class SungrowClient():
         if self.inverter_config.get('use_local_time',False):
             self.latest_scrape["timestamp"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             logging.debug(f'Using Local Computer Time: {self.latest_scrape.get("timestamp")}')       
-            del self.latest_scrape["year"]
-            del self.latest_scrape["month"]
-            del self.latest_scrape["day"]
-            del self.latest_scrape["hour"]
-            del self.latest_scrape["minute"]
-            del self.latest_scrape["second"]
+            for key in ['year', 'month', 'day', 'hour', 'minute', 'second']:
+                if key in self.latest_scrape:
+                    del self.latest_scrape[key]
         else:
             try:
                 self.latest_scrape["timestamp"] = "%s-%s-%s %s:%02d:%02d" % (
@@ -402,12 +399,9 @@ class SungrowClient():
             except Exception:
                 self.latest_scrape["timestamp"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 logging.warning(f'Failed to get Timestamp from Inverter, using Local Time: {self.latest_scrape.get("timestamp")}')       
-                del self.latest_scrape["year"]
-                del self.latest_scrape["month"]
-                del self.latest_scrape["day"]
-                del self.latest_scrape["hour"]
-                del self.latest_scrape["minute"]
-                del self.latest_scrape["second"]
+                for key in ['year', 'month', 'day', 'hour', 'minute', 'second']:
+                    if key in self.latest_scrape:
+                        del self.latest_scrape[key]
                 pass
 
         # If alarm state exists then convert to timestamp, otherwise remove it
